@@ -1,0 +1,36 @@
+<div>
+  <br>
+   <h3 class="text-center">Update issue</h3>
+   <br>
+   <form [formGroup]="updateForm">
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="title" placeholder="Issue title" #title />
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="responsible" placeholder="Issue responsible" #responsible />
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="description" placeholder="Issue description" #description />
+      </div>  
+      <div class="form-group">
+        <select class="form-control" formControlName="severity" #severity>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" formControlName="status" #status>
+          <option value="open">Open</option>
+          <option value="In-Progress">In-Progress</option>
+          <option value="done">Done</option>
+        </select>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary" routerLink="/list">Back</button>&nbsp;
+        <button type="submit" class="btn btn-primary" (click)="updateIssue(title.value , responsible.value, description.value, severity.value, status.value)">Update</button>
+      </div>  
+      </form>      
+</div>

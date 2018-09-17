@@ -1,0 +1,27 @@
+<div>
+  <br>
+   <h3>Create a new issue</h3>
+   <form [formGroup]="createForm">
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="title" placeholder="Issue title" #title />
+      </div>
+    
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="responsible" placeholder="Issue responsible" #responsible />
+      </div>
+    
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="description" placeholder="Issue description" #description />
+      </div>
+    
+      <select class="form-control" formControlName="severity" #severity>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <div class="text-center">
+        <button class="btn btn-primary" routerLink="/list">Back</button> &nbsp;
+        <button type="submit" class="btn btn-primary" (click)="addIssue(title.value , responsible.value, description.value, severity.value)">Create</button>
+      </div>  
+    </form>      
+</div>

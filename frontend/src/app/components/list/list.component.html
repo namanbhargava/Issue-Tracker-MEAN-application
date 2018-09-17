@@ -1,0 +1,28 @@
+<div class="fluid-container">
+  <div class="row">
+    <div class="col-lg-10">
+        <table class="table">
+          <tr>
+            <th>Title</th>
+            <th>Responsible</th>
+            <th>Description</th>
+            <th>Severity</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+          <tr *ngFor= "let issue of issues">
+            <td>{{issue.title}}</td>
+            <td>{{issue.responsible}}</td>
+            <td>{{issue.description}}</td>
+            <td>{{issue.severity}}</td>
+            <td>{{issue.status}}</td>
+            <td><button (click) = "editIssue(issue._id)">Edit</button>
+              &nbsp;
+            <button (click) = "deleteIssue(issue._id)">Delete</button></td>
+          </tr>
+        </table>
+      
+    </div>
+    <div class="col-lg-2"><button class="btn btn-primary create-btn" routerLink="/create">Create new issue</button></div>
+</div>
+</div>
